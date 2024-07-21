@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{fragments/head :: head}">
+
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <header th:replace="~{fragments/header :: header}">
+    
+    <!-- header -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding long_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/about-img.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container" sec:authorize="!isAuthenticated()">
+              <h2>
+                Welcome to Spark Blogs
+              </h2>
+              <p>
+                Welcome to Spark Blogs, where creativity ignites and ideas come to life. We’re passionate about sharing stories, insights, and inspiration that spark curiosity and fuel imagination. Whether you’re a seasoned writer, an aspiring artist, or simply someone who loves to explore the world through words, you’ve found your digital haven. Join our community of dreamers, thinkers, and storytellers as we embark on this literary journey together. Let’s light up the blogosphere with our collective brilliance!            </p>
+              <a href="/register-login">
+                Get Started
+              </a>
+            </div>
+            
+            <div class="heading_container" sec:authorize="isAuthenticated()">
+              
+              <h2>
+                Hi!
+                <span sec:authentication="name"></span>
+              </h2>
+              <p>
+                Welcome back! We're thrilled to have you here. What's in your mind today? Let's write it down.              </p>
+                <a href="/">
+                  Start Writing
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <!-- info section -->
+
+  <!-- footer -->
+  <footer th:replace="~{fragments/footer :: footer}">
+
+  
+  <!-- end info_section -->
+
+  
+
+</body>
+
+</html>

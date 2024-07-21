@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header class="header_section long_section px-0">
+  <nav class="navbar navbar-expand-lg custom_nav-container ">
+    <a class="navbar-brand" href="/home">
+      <span>
+        Spark Blog
+      </span>
+    </a>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class=""> </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+        <ul class="navbar-nav  ">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Home </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs">Blog</a>
+          </li>
+
+        </ul>
+      </div>
+
+
+      <div class="quote_btn-container">
+
+        <!-- here I used the div tags.
+          Earlier I was using a span tag which was not working and the dependency was also older.
+           Now it is thymeleaf - spring security 6 -->
+
+        <div sec:authorize="!isAuthenticated()">
+
+          <a  href="/register">
+            <span>
+              Register
+            </span>
+          </a>
+          <a  href="/signin">
+  
+            <span>
+              Login
+            </span>
+  
+          </a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+
+          <a  href="/Profile">
+            <span>
+              
+              <img src="images/user.png">
+            </span>
+          </a>
+         
+          
+          <a  href="/logout">
+            <span>
+              Logout
+            </span>
+          </a>
+          
+        </div>
+
+
+
+       
+
+       
+       
+
+
+        <form class="form-inline">
+          <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+</html>

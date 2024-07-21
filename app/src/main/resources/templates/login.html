@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head">
+
+
+<body class="sub_page">
+    <style>
+        .register {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            margin: 50px;
+        }
+
+        .containers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+
+
+            border-radius: 10px;
+
+        }
+
+        .btn {
+            background-color: #007bff;
+            border: solid black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #k {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            font-size: large;
+        }
+
+        .i-3 {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 300px;
+        }
+    </style>
+
+    <div class="hero_area">
+        <header th:replace="fragments/header :: header">
+
+            <!-- header -->
+    </div>
+
+    <!-- about section -->
+    <div class="register">
+
+        <div class="containers">
+            <h4>
+                Login
+            </h4>
+            <form 
+            id="k" 
+            action="/login" 
+            method="post">
+                <!-- here ids given should match with account model -->
+                                <input id="username" name="username" class="i-3" type="text" placeholder="Enter Your Username" />
+                                <input id="password" name="password" class="i-3" type="password" placeholder="Enter Your Password" />
+                                <button type="submit" class="btn">
+                                    Login
+                                </button>
+            </form>
+        </div>
+
+
+    </div>
+
+    <!-- end about section -->
+
+
+    <!-- info section -->
+
+    <!-- footer -->
+    <footer th:replace="fragments/footer :: footer">
+
+
+        <!-- end info_section -->
+
+
+
+</body>
+
+</html>
